@@ -1,4 +1,4 @@
-import { AbstractLoggerFactory, Logger } from "..";
+import { AbstractLoggerFactory, Logger } from "../core";
 import { ConsoleLogger, ConsoleLoggerOptions } from "./console-logger";
 
 /**

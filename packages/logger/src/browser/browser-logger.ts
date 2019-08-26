@@ -1,5 +1,5 @@
 import { format } from "util";
-import { AbstractLogger, consolePrint, Level, LevelType } from "../";
+import { AbstractLogger, consolePrint, Level, LevelType } from "../core";
 import { isFormatString } from "../core";
 
 /**
