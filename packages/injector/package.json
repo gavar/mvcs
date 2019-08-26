@@ -58,6 +58,7 @@
     "author": "../..",
     "license": "../..",
     "repository": "../..",
+    "publishConfig": "../..",
     "dependencies": {
       "@emulsy/lang": "../..",
       "@emulsy/annotation": "../..",

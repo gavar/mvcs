@@ -76,6 +76,9 @@
     "typescript": "^3.5.3",
     "wsrun": "^5.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "commonDependencies": {
     "@emulsy/annotation": "beta",
     "@emulsy/lang": "beta"

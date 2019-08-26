@@ -54,6 +54,7 @@
     "author": "../..",
     "license": "../..",
     "repository": "../..",
+    "publishConfig": "../..",
     "peerDependencies": {
       "tslib": "../.."
     }

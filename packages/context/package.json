@@ -58,6 +58,7 @@
     "author": "../..",
     "license": "../..",
     "repository": "../..",
+    "publishConfig": "../..",
     "dependencies": {
       "@mvcs/event": "../event",
       "@mvcs/injector": "../injector"
