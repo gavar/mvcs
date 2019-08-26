@@ -1,8 +1,6 @@
 import { Abstract } from "tstt";
 import { Logger } from "./logger";
 import { LoggerFactory } from "./logger-factory";
-import defineProperty = Reflect.defineProperty;
-import getPrototypeOf = Reflect.getPrototypeOf;
 
 const stack: any[] = [];
 const configs = new WeakMap<any, any>();
@@ -21,7 +19,7 @@ export function logging(target: Abstract): void {
     return;
 
   // lazy logger
-  defineProperty(prototype, "logger", {
+  Reflect.defineProperty(prototype, "logger", {
     enumerable: true,
     configurable: true,
     get: getLogger,
@@ -42,7 +40,7 @@ export namespace logging {
 
 function getLogger(this: Abstract): Logger {
   // TODO: get logger factory from context
-  const prototype = getPrototypeOf(this);
+  const prototype = Reflect.getPrototypeOf(this);
   const name = configs.get(prototype);
   const logger = name && LoggerFactory.getLogger(name) || LoggerFactory.getLogger(this);
   setLogger.call(prototype as any, logger);
@@ -50,7 +48,7 @@ function getLogger(this: Abstract): Logger {
 }
 
 function setLogger(this: Abstract, value: Logger) {
-  defineProperty(this, "logger", {
+  Reflect.defineProperty(this, "logger", {
     value,
     writable: true,
     enumerable: true,
