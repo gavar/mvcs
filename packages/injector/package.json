@@ -1,0 +1,58 @@
+{
+  "name": "@mvcs/injector",
+  "version": "1.0.0-beta.0",
+  "description": "MV* inversion of control container inspired by RobotLegs SwiftSuspenders",
+  "keywords": [
+    "ioc",
+    "mv*",
+    "mvc",
+    "mvcs",
+    "robotlegs",
+    "typescript"
+  ],
+  "homepage": "https://github.com/gavar/wrench/tree/master/packages/injector#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/wrench/labels/injector"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/mvcs.git",
+    "directory": "packages/injector"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Max Stankevich",
+    "email": "max.stankevich.me@gmail.com",
+    "url": "https://github.com/gavar"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "yarn clean && roll --preserveModules",
+    "clean": "rimraf tmp out lib es *.tgz",
+    "format": "yarn lint --fix",
+    "format:pack": "fixpack && sort-package-json",
+    "lint": "echo no linting yet",
+    "prepack": "yarn build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "test": "jest"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "copycat": {
+    "author": "../..",
+    "license": "../..",
+    "repository": "../.."
+  },
+  "standard-version": {
+    "extends": "@wrench/standard-version-config",
+    "tag-prefix": "v/injector/"
+  }
+}
