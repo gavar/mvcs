@@ -1,2 +1,2 @@
 ### Related Projects
-[RobotLegs Context](https://github.com/robotlegs/robotlegs-framework/tree/master/src/robotlegs/bender/framework/api)
+[RobotLegs Context](https://github.com/robotlegs/robotlegs-framework/blob/master/src/robotlegs/bender/framework/readme-context.md)
