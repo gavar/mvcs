@@ -44,14 +44,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "@emulsy/annotation": "^1.0.0-beta",
-    "@mvcs/core": ">=1.0.0-beta",
     "@mvcs/event": ">=1.0.0-beta",
-    "@mvcs/event-linker": ">=1.0.0-beta",
-    "@mvcs/injector": ">=1.0.0-beta",
-    "@mvcs/logger": ">=1.0.0-beta"
+    "@mvcs/injector": ">=1.0.0-beta"
   },
   "devDependencies": {},
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -60,12 +59,11 @@
     "license": "../..",
     "repository": "../..",
     "dependencies": {
-      "@emulsy/annotation": "../..",
-      "@mvcs/core": "../core",
       "@mvcs/event": "../event",
-      "@mvcs/event-linker": "../event-linker",
-      "@mvcs/injector": "../injector",
-      "@mvcs/logger": "../logger"
+      "@mvcs/injector": "../injector"
+    },
+    "peerDependencies": {
+      "tslib": "../.."
     }
   },
   "standard-version": {

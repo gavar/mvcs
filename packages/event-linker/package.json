@@ -43,14 +43,28 @@
     "prepublishOnly": "yarn test && yarn run lint",
     "test": "jest"
   },
+  "dependencies": {
+    "@mvcs/core": ">=1.0.0-beta",
+    "@mvcs/event": ">=1.0.0-beta"
+  },
   "devDependencies": {},
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },
   "copycat": {
     "author": "../..",
     "license": "../..",
-    "repository": "../.."
+    "repository": "../..",
+    "dependencies": {
+      "@mvcs/core": "../core",
+      "@mvcs/event": "../event"
+    },
+    "peerDependencies": {
+      "tslib": "../.."
+    }
   },
   "standard-version": {
     "extends": "@wrench/standard-version-config",

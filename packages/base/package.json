@@ -49,7 +49,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@emulsy/annotation": "^1.0.0-beta",
+    "@emulsy/annotation": "beta",
     "@mvcs/core": ">=1.0.0-beta",
     "@mvcs/event": ">=1.0.0-beta",
     "@mvcs/event-linker": ">=1.0.0-beta",
@@ -57,6 +57,9 @@
     "@mvcs/logger": ">=1.0.0-beta"
   },
   "devDependencies": {},
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -71,6 +74,9 @@
       "@mvcs/event-linker": "../event-linker",
       "@mvcs/injector": "../injector",
       "@mvcs/logger": "../logger"
+    },
+    "peerDependencies": {
+      "tslib": "../.."
     }
   },
   "standard-version": {

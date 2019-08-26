@@ -43,13 +43,19 @@
     "test": "jest"
   },
   "devDependencies": {},
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
   "publishConfig": {
     "access": "public"
   },
   "copycat": {
     "author": "../..",
     "license": "../..",
-    "repository": "../.."
+    "repository": "../..",
+    "peerDependencies": {
+      "tslib": "../.."
+    }
   },
   "standard-version": {
     "extends": "@wrench/standard-version-config",

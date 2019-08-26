@@ -58,22 +58,26 @@
   "jest": {
     "preset": "ts-jest"
   },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
-    "@wrench/commitlint-config": "^1.0.0-beta",
-    "@wrench/copycat-package": "^1.0.0-beta",
-    "@wrench/ts-config": "^1.0.0-beta",
+    "@wrench/commitlint-config": "beta",
+    "@wrench/copycat-package": "beta",
+    "@wrench/roll": "beta",
+    "@wrench/ts-config": "^1.0.0-beta.1",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "rollup": "^1.20.2",
     "ts-jest": "^24.0.2",
+    "tstt": "^1.0.4",
     "typescript": "^3.5.3",
     "wsrun": "^5.0.0"
   },
   "commonDependencies": {
-    "@emulsy/annotation": "^1.0.0-beta",
-    "tslib": "^1.10.0",
-    "tstt": "^1.0.4"
+    "@emulsy/annotation": "beta",
+    "@emulsy/lang": "beta"
   }
 }
