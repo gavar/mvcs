@@ -37,8 +37,13 @@
     ]
   },
   "scripts": {
-    "format:pack": "fixpack && sort-package-json",
-    "test": "jest"
+    "build": "yarn clean && yarn wsrun --bin npm -c pack",
+    "clean": "rimraf out && yarn wsrun -c clean",
+    "format:pack": "fixpack && sort-package-json && yarn wsrun -c format:pack",
+    "release": "semantic-release --no-ci",
+    "sync:pack": "copycat-pack -r && typesync && yarn && yarn format:pack",
+    "test": "jest",
+    "wsrun": "wsrun --stages -p @mvcs/*"
   },
   "husky": {
     "hooks": {
@@ -60,11 +65,14 @@
     "@wrench/copycat-package": "^1.0.0-beta",
     "@wrench/ts-config": "^1.0.0-beta",
     "husky": "^3.0.0",
-    "typescript": "^3.5.3",
     "jest": "^24.8.0",
-    "ts-jest": "^24.0.2"
+    "rollup": "^1.20.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3",
+    "wsrun": "^5.0.0"
   },
   "commonDependencies": {
+    "@emulsy/annotation": "^1.0.0-beta",
     "tslib": "^1.10.0",
     "tstt": "^1.0.4"
   }
