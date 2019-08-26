@@ -4,7 +4,10 @@
   "private": true,
   "description": "MV* framework for web apps inspired by robotlegs framework.",
   "keywords": [
+    "event-bus",
+    "event-emitter",
     "ioc",
+    "logger",
     "module",
     "mv*",
     "mvc",
@@ -50,9 +53,6 @@
   "jest": {
     "preset": "ts-jest"
   },
-  "dependencies": {
-    "tslib": "^1.10.0"
-  },
   "devDependencies": {
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
@@ -63,5 +63,9 @@
     "typescript": "^3.5.3",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2"
+  },
+  "commonDependencies": {
+    "tslib": "^1.10.0",
+    "tstt": "^1.0.4"
   }
 }
