@@ -1,6 +1,5 @@
 import { format } from "util";
-import { AbstractLogger, consolePrint, Level, LevelType } from "../core";
-import { isFormatString } from "../core";
+import { AbstractLogger, consolePrint, isFormatString, Level, LevelType } from "../core";
 
 /**
  * Logger writing messages to the {@link console} designed to be used in browsers.
