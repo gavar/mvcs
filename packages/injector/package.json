@@ -68,6 +68,7 @@
       "tslib": "../.."
     }
   },
+  "release": true,
   "standard-version": {
     "extends": "@wrench/standard-version-config",
     "tag-prefix": "v/injector/"
