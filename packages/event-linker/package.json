@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/event-linker",
-  "version": "1.0.0-beta.0",
+  "version": "0.0.0",
   "description": "MV* event linker keeps track of listening events providing API to manage their lifecycle",
   "keywords": [
     "event-linker",
