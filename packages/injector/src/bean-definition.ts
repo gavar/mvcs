@@ -27,7 +27,7 @@ export interface BeanDefinition<T = any> {
 }
 
 /** Defines type of the binding. */
-export enum BindingType {
+export const enum BindingType {
   /**
    * Binding to a an implementation type.
    * @see BeanDefinition#implementationType
@@ -44,7 +44,7 @@ export enum BindingType {
 /**
  * Defines beans lifecycle scope.
  */
-export enum BindingScope {
+export const enum BindingScope {
   /** Defines that only one bean of the given type should exists withing context. */
   Singleton = "singleton",
 
