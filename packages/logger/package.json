@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/logger",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MV* lightweight logging abstraction layer",
   "keywords": [
     "browser",

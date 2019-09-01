@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/context",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MV* context is a core module acting as a junction point for the application modules",
   "keywords": [
     "context",
@@ -44,8 +44,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mvcs/event": ">=0.0.0 <1.0.0",
-    "@mvcs/injector": ">=0.0.0 <1.0.0"
+    "@mvcs/event": ">=0.0.1 <1.0.0",
+    "@mvcs/injector": ">=0.0.1 <1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {

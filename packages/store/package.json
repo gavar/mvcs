@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/store",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MV* application state management inspired by React.",
   "keywords": [
     "mv*",

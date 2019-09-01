@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/base",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "MV* base classes for typical application",
   "keywords": [
     "core",
@@ -50,11 +50,11 @@
   },
   "dependencies": {
     "@emulsy/annotation": "<1.0.0",
-    "@mvcs/core": ">=0.0.0 <1.0.0",
-    "@mvcs/event": ">=0.0.0 <1.0.0",
-    "@mvcs/event-linker": ">=0.0.0 <1.0.0",
-    "@mvcs/injector": ">=0.0.0 <1.0.0",
-    "@mvcs/logger": ">=0.0.0 <1.0.0"
+    "@mvcs/core": ">=0.0.1 <1.0.0",
+    "@mvcs/event": ">=0.0.1 <1.0.0",
+    "@mvcs/event-linker": ">=0.0.1 <1.0.0",
+    "@mvcs/injector": ">=0.0.1 <1.0.0",
+    "@mvcs/logger": ">=0.0.1 <1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {
