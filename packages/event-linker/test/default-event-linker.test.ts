@@ -6,7 +6,7 @@ import {
   EventDef,
   EventListener,
 } from "@mvcs/event";
-import { DefaultEventLinker } from "./default-event-linker";
+import { DefaultEventLinker } from "..";
 
 namespace DefaultEventLinkerSuite {
   describe("DefaultEventLinker", () => {
