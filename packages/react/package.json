@@ -1,0 +1,93 @@
+{
+  "name": "@mvcs/react",
+  "version": "0.0.0",
+  "description": "MV* for React",
+  "keywords": [
+    "ioc",
+    "mv*",
+    "mvc",
+    "mvcs",
+    "react",
+    "robotlegs",
+    "state",
+    "store",
+    "typescript"
+  ],
+  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/wrench/labels/react"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/mvcs.git",
+    "directory": "packages/react"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Max Stankevich",
+    "email": "max.stankevich.me@gmail.com",
+    "url": "https://github.com/gavar"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "yarn clean && roll --preserveModules",
+    "clean": "rimraf tmp out lib es *.tgz",
+    "format": "yarn lint --fix",
+    "format:pack": "fixpack && sort-package-json",
+    "lint": "echo no linting yet",
+    "prepack": "copycat-pack && yarn build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "test": "jest --config ../../package.json --rootDir . --passWithNoTests"
+  },
+  "dependencies": {
+    "@emulsy/annotation": "<1.0.0",
+    "@mvcs/base": ">=0.0.1 <1.0.0",
+    "@mvcs/context": ">=0.0.1 <1.0.0",
+    "@mvcs/core": ">=0.0.1 <1.0.0",
+    "@mvcs/event": ">=0.0.1 <1.0.0",
+    "@mvcs/injector": ">=0.0.1 <1.0.0",
+    "@mvcs/logger": ">=0.0.1 <1.0.0",
+    "@mvcs/store": ">=0.0.1 <1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.0",
+    "react": "^16.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "tslib": "^1.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "copycat": {
+    "author": "../..",
+    "license": "../..",
+    "repository": "../..",
+    "publishConfig": "../..",
+    "dependencies": {
+      "@emulsy/annotation": "../..",
+      "@mvcs/base": "../base",
+      "@mvcs/context": "../context",
+      "@mvcs/core": "../core",
+      "@mvcs/event": "../event",
+      "@mvcs/injector": "../injector",
+      "@mvcs/logger": "../logger",
+      "@mvcs/store": "../store"
+    },
+    "peerDependencies": {
+      "tslib": "../.."
+    }
+  },
+  "release": true,
+  "standard-version": {
+    "extends": "@wrench/standard-version-config",
+    "tag-prefix": "v/react/"
+  }
+}
