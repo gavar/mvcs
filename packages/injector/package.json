@@ -40,7 +40,7 @@
     "lint": "echo no linting yet",
     "prepack": "copycat-pack && yarn build",
     "prepublishOnly": "yarn test && yarn run lint",
-    "test": "jest"
+    "test": "jest --config ../../package.json --rootDir . --passWithNoTests"
   },
   "dependencies": {
     "@emulsy/annotation": "<1.0.0",
