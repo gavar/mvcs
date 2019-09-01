@@ -1,5 +1,6 @@
 import { Injector } from "@mvcs/injector";
-import { Component } from "react";
+import { Component, useContext } from "react";
+import { ReactContext } from "../context";
 
 /** Component with dependency injections. */
 export class InjectorComponent<P = any, S = never> extends Component<P, S> {
@@ -9,8 +10,7 @@ export class InjectorComponent<P = any, S = never> extends Component<P, S> {
 
   constructor(props: P, context: any) {
     super(props, context);
-    // TODO: get injector from context
-    this.injector = Injector.root;
+    this.injector = useContext(ReactContext).injector;
     this.injector.inject(this);
   }
 }

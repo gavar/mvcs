@@ -1,73 +1,46 @@
-import { Context, DefaultContext } from "@mvcs/context";
-import { Component } from "react";
+import { Context } from "@mvcs/context";
+import { Component, createElement } from "react";
+import { ReactContext } from "./react-context";
 
-export interface ReactMvcsContext {
-  mvcs: ReactContextViewContent;
-}
-
-export interface ReactContextViewContent {
-  context: Context;
-}
-
-export interface ReactContextViewProps {
-  contextType?: new () => Context;
-  configure?(context: Context): void;
+export namespace ReactContextView {
+  export interface Props {
+    contextType: new () => Context;
+    configure?(context: Context): void;
+  }
 }
 
 /**
- * React component initializing an MVCS context.
+ * React component initializing `mvcs` context.
  */
-export class ReactContextView extends Component<ReactContextViewProps> {
+export class ReactContextView extends Component<ReactContextView.Props> {
+  protected mvcs: Context;
 
-  protected viewContext: Context;
-  protected childContext: ReactMvcsContext;
-  protected mvcsContext: ReactContextViewContent;
-
-  public static readonly defaultProps: ReactContextViewProps = {
-    contextType: DefaultContext,
-  };
-
-  constructor(props: ReactContextViewProps, context: any) {
+  constructor(props: ReactContextView.Props, context: any) {
     super(props, context);
     const {contextType, configure} = props;
 
     // configure context
-    this.viewContext = new contextType();
-    if (configure) configure(this.viewContext);
-    this.viewContext.initialize();
-
-    // initialize react context
-    this.mvcsContext = {context: this.viewContext};
-    this.componentWillUpdate(props, this.state, context);
-  }
-
-  /** @inheritDoc */
-  getChildContext(): ReactMvcsContext {
-    return this.childContext;
-  }
-
-  /** @inheritDoc */
-  componentWillUpdate(props: Readonly<ReactContextViewProps>, state: Readonly<{}>, context: any): void {
-    // child context
-    this.childContext = {
-      ...context,
-      mvcs: this.mvcsContext,
-    };
+    this.mvcs = new contextType();
+    if (configure) configure(this.mvcs);
+    this.mvcs.initialize();
   }
 
   /** @inheritDoc */
   componentDidMount(): void {
-    this.viewContext.initialize();
+    this.mvcs.initialize();
   }
 
   /** @inheritDoc */
   componentWillUnmount(): void {
-    this.viewContext.destroy();
-    this.viewContext = null;
+    this.mvcs.destroy();
+    this.mvcs = null;
   }
 
   /** @inheritDoc */
   render() {
-    return this.props.children;
+    return createElement(ReactContext.Provider,
+      {value: this.mvcs},
+      this.props.children,
+    );
   }
 }
