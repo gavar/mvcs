@@ -1,4 +1,3 @@
-import { BeanKey } from "@mvcs/core";
 import { EventBinder, EventBindingConfigurer, EventContainer, EventDef, EventListener } from "@mvcs/event";
 
 /**
@@ -43,6 +42,6 @@ export interface EventLinker {
 }
 
 export namespace EventLinker {
-  /** @see Interface#beanType */
-  export const beanType: BeanKey<EventLinker> = Symbol.for("EventLinker");
+  export declare const BeanType: EventLinker;
+  export const BeanName = "EventLinker";
 }

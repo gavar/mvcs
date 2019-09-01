@@ -1,4 +1,3 @@
-import { BeanKey } from "@mvcs/core";
 import { EventBinder } from "./event-binder";
 import { EventContainer } from "./event-container";
 import { EventDef } from "./event-name";
@@ -19,8 +18,8 @@ export interface EventEmitter extends EventBinder, EventContainer {
 }
 
 export namespace EventEmitter {
-  /** @see Interface#beanType. */
-  export const beanType: BeanKey<EventEmitter> = Symbol.for("EventEmitter");
+  export declare const BeanType: EventEmitter;
+  export const BeanName = "EventEmitter";
 
   /** Global shared instance of {@link EventEmitter}. */
   export let shared: EventEmitter;

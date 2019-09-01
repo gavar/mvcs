@@ -1,4 +1,4 @@
-import { BeanKey, BeanType } from "@mvcs/core";
+import { BeanType } from "@mvcs/core";
 import { Newable } from "tstt";
 import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
 
@@ -6,7 +6,6 @@ import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
  * Manages the mappings and acts as the central hub from which all injections are started.
  */
 export interface Injector {
-
   /**
    * Get or create binding for a constructable bean type.
    * @param type - constructable type to bind.
@@ -55,8 +54,8 @@ export interface Injector {
 export namespace Injector {
   const INJECTOR = Symbol("injector");
 
-  /** {@link Injector} type identifier. */
-  export const beanType: BeanKey<Injector> = Symbol("Injector");
+  export declare const BeanType: Injector;
+  export const BeanName = "Injector";
 
   /**
    * Root injector to use as fallback.

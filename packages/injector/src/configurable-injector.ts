@@ -1,4 +1,4 @@
-import { BeanKey, BeanType, InitializingBean } from "@mvcs/core";
+import { BeanType, InitializingBean } from "@mvcs/core";
 import { Newable } from "tstt";
 import { BeanDefinition, BindingScope, BindingType } from "./bean-definition";
 import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
@@ -11,14 +11,12 @@ import { Injector } from "./injector";
  * Provides possibility to configure mappings.
  */
 export class ConfigurableInjector implements Injector {
-  private readonly beanCreationArgs: Readonly<Injector[]>;
-  private readonly singletons: Map<BeanKey, any>;
-  private readonly definitions: Map<BeanKey, ConfigurableBeanDefinition>;
+  private readonly singletons: Map<BeanType, any>;
+  private readonly definitions: Map<BeanType, ConfigurableBeanDefinition>;
 
   constructor() {
-    this.beanCreationArgs = [this];
-    this.singletons = new Map<BeanKey, any>();
-    this.definitions = new Map<BeanKey, ConfigurableBeanDefinition>();
+    this.singletons = new Map();
+    this.definitions = new Map();
     this.bind(Injector).toConstant(this);
   }
 
@@ -31,31 +29,27 @@ export class ConfigurableInjector implements Injector {
   /** @inheritDoc */
   bind<T>(type: BeanType<T>): BindingToSyntax<T> & BindingScopeSyntax<T> {
     // find bean definition
-    const key = BeanType.key(type);
-    let definition = this.definitions.get(key);
+    let definition = this.definitions.get(type);
     // bind self to singleton by default
     if (!definition) {
-      definition = new ConfigurableBeanDefinition<T>(type, key);
+      definition = new ConfigurableBeanDefinition(type);
       if (typeof type === "function")
         definition.to(type);
       definition.asSingleton();
-      this.definitions.set(key, definition);
+      this.definitions.set(type, definition);
     }
     return definition;
   }
 
   /** @inheritDoc */
   bean<T>(type: BeanType<T>): T {
-
     // find bean definition
-    const key = BeanType.key(type);
-    let definition = this.definitions.get(key);
-
+    let definition = this.definitions.get(type);
     // bind self to singleton by default
     if (!definition && typeof type === "function") {
-      definition = new ConfigurableBeanDefinition<T>(type, key);
+      definition = new ConfigurableBeanDefinition(type);
       definition.to(type).asSingleton();
-      this.definitions.set(key, definition);
+      this.definitions.set(type, definition);
     }
 
     // resolve
@@ -97,10 +91,10 @@ export class ConfigurableInjector implements Injector {
   private resolve<T>(definition: BeanDefinition<T>): T {
     switch (definition.bindingScope) {
       case BindingScope.Singleton:
-        let instance: T = this.singletons.get(definition.key);
+        let instance: T = this.singletons.get(definition.beanType);
         if (!instance) {
           instance = this.instanceOf(definition);
-          this.singletons.set(definition.key, instance);
+          this.singletons.set(definition.beanType, instance);
         }
         return instance;
 

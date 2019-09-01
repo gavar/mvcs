@@ -1,4 +1,4 @@
-import { BeanKey, BeanType } from "@mvcs/core";
+import { BeanType } from "@mvcs/core";
 import { Newable } from "tstt";
 
 /**
@@ -7,9 +7,6 @@ import { Newable } from "tstt";
  * concrete implementations.
  */
 export interface BeanDefinition<T = any> {
-  /** Key that uniquely identifies this bean definition. */
-  readonly key: BeanKey<T>;
-
   /** Type of the bean this definition is for. */
   readonly beanType: BeanType<T>;
 

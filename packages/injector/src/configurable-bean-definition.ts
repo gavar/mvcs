@@ -1,4 +1,4 @@
-import { BeanKey, BeanType } from "@mvcs/core";
+import { BeanType } from "@mvcs/core";
 import { Newable } from "tstt";
 import { BeanDefinition, BindingScope, BindingType } from "./bean-definition";
 import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
@@ -7,9 +7,6 @@ import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
  * Bean definition with fluent confirmation syntax.
  */
 export class ConfigurableBeanDefinition<T = any> implements BeanDefinition<T>, BindingToSyntax<T>, BindingScopeSyntax<T> {
-
-  /** @inheritDoc */
-  readonly key: BeanKey<T>;
 
   /** @inheritDoc */
   readonly beanType: BeanType<T>;
@@ -26,8 +23,7 @@ export class ConfigurableBeanDefinition<T = any> implements BeanDefinition<T>, B
   /** @inheritDoc */
   constant: T;
 
-  constructor(beanType: BeanType<T>, key?: BeanKey<T>) {
-    this.key = key || BeanType.key(beanType);
+  constructor(beanType: BeanType<T>) {
     this.beanType = beanType;
   }
 
@@ -53,5 +49,4 @@ export class ConfigurableBeanDefinition<T = any> implements BeanDefinition<T>, B
   asPrototype(): void {
     this.bindingScope = BindingScope.Prototype;
   }
-
 }
