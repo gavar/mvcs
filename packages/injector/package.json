@@ -43,9 +43,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@emulsy/annotation": "beta",
-    "@emulsy/lang": "beta",
-    "@mvcs/core": ">=1.0.0-beta"
+    "@emulsy/annotation": "<1.0.0",
+    "@emulsy/lang": "<1.0.0",
+    "@mvcs/core": ">=0.0.0 <1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {

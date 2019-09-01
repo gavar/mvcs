@@ -64,10 +64,12 @@
   "devDependencies": {
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
-    "@wrench/commitlint-config": "beta",
-    "@wrench/copycat-package": "beta",
-    "@wrench/roll": "beta",
-    "@wrench/ts-config": "^1.0.0-beta.1",
+    "@types/semantic-release": "^15.13.0",
+    "@wrench/commitlint-config": "<1.0.0",
+    "@wrench/copycat-package": "<1.0.0",
+    "@wrench/roll": "<1.0.0",
+    "@wrench/semantic-release-ws-preset-nodejs": "<1.0.0",
+    "@wrench/ts-config": "<1.0.0",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "rollup": "^1.20.2",
@@ -81,8 +83,8 @@
     "access": "public"
   },
   "commonDependencies": {
-    "@emulsy/annotation": "beta",
-    "@emulsy/lang": "beta"
+    "@emulsy/annotation": "<1.0.0",
+    "@emulsy/lang": "<1.0.0"
   },
   "release": {
     "extends": "@wrench/semantic-release-ws-preset-nodejs/default"
