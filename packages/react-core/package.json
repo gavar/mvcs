@@ -1,0 +1,69 @@
+{
+  "name": "@mvcs/react-core",
+  "version": "0.0.0",
+  "description": "Common tools for React developer",
+  "keywords": [
+    "fundamental",
+    "mvcs",
+    "react",
+    "typescript"
+  ],
+  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react-core#readme",
+  "bugs": {
+    "url": "https://github.com/gavar/wrench/labels/react-core"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavar/mvcs.git",
+    "directory": "packages/react-core"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Max Stankevich",
+    "email": "max.stankevich.me@gmail.com",
+    "url": "https://github.com/gavar"
+  },
+  "files": [
+    "lib",
+    "es"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "yarn clean && roll --preserveModules",
+    "clean": "rimraf tmp out lib es *.tgz",
+    "format": "yarn lint --fix",
+    "format:pack": "fixpack && sort-package-json",
+    "lint": "echo no linting yet",
+    "prepack": "copycat-pack && yarn build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "test": "jest --config ../../package.json --rootDir . --passWithNoTests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^16.0.0",
+    "react": "^16.0.0"
+  },
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "copycat": {
+    "author": "../..",
+    "license": "../..",
+    "repository": "../..",
+    "publishConfig": "../..",
+    "dependencies": {},
+    "peerDependencies": {
+      "tslib": "../.."
+    }
+  },
+  "release": true,
+  "standard-version": {
+    "extends": "@wrench/standard-version-config",
+    "tag-prefix": "v/react-core/"
+  }
+}
