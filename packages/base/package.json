@@ -49,7 +49,7 @@
     "test": "jest --config ../../package.json --rootDir . --passWithNoTests"
   },
   "dependencies": {
-    "@emulsy/annotation": "<1.0.0",
+    "@emulsy/annotation": ">=0.0.2 <1.0.0",
     "@mvcs/core": ">=0.0.1 <1.0.0",
     "@mvcs/event": ">=0.0.1 <1.0.0",
     "@mvcs/event-linker": ">=0.0.1 <1.0.0",

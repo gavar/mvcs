@@ -84,7 +84,7 @@
     "access": "public"
   },
   "commonDependencies": {
-    "@emulsy/annotation": "<1.0.0",
+    "@emulsy/annotation": ">=0.0.2 <1.0.0",
     "@emulsy/lang": "<1.0.0"
   },
   "release": {
