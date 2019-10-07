@@ -1,8 +1,9 @@
 import { closure } from "@emulsy/annotation";
+import { shallowDiffers } from "@emulsy/compare";
 import { Mediator, MediatorErrorHandlerObject } from "@mvcs/core";
 import { Logger, logging } from "@mvcs/logger";
 import { Component, ComponentType } from "react";
-import { scheduleUpdate, shallowDiffers, Toggling } from "../util";
+import { scheduleUpdate, Toggling } from "../util";
 import { ModifiableView } from "../view";
 import { MediatorConnect } from "./mediator-connect";
 import { ReactViewMediator } from "./react-view-mediator";

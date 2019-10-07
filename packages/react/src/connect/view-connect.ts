@@ -1,4 +1,5 @@
 import { closure } from "@emulsy/annotation";
+import { shallowDiffers } from "@emulsy/compare";
 import { beanDestroyer, BeanDestroyErrorHandler, Mediator, MediatorErrorHandlerObject } from "@mvcs/core";
 import { EventDef, EventEmitter } from "@mvcs/event";
 import { inject } from "@mvcs/injector";
@@ -8,7 +9,7 @@ import { Component, ComponentType, Ref, RefObject } from "react";
 import { Mutable } from "tstt";
 import { BeanConnect, InjectorComponent } from "../bean";
 import { MediatorConnect, ReactViewMediator } from "../mediator";
-import { scheduleUpdate, shallowDiffers, Toggling } from "../util";
+import { scheduleUpdate, Toggling } from "../util";
 import { ModifiableView } from "../view";
 import { DispatchToProps } from "./emitter-connect";
 import { StoreConnect, StoreConnectOptions } from "./store-connect";

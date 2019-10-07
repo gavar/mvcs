@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@emulsy/annotation": ">=0.0.2 <1.0.0",
+    "@emulsy/compare": ">=0.0.1 <1.0.0",
     "@mvcs/base": ">=0.0.1 <1.0.0",
     "@mvcs/context": ">=0.0.1 <1.0.0",
     "@mvcs/core": ">=0.0.1 <1.0.0",
@@ -73,6 +74,7 @@
     "publishConfig": "../..",
     "dependencies": {
       "@emulsy/annotation": "../..",
+      "@emulsy/compare": "../..",
       "@mvcs/base": "../base",
       "@mvcs/context": "../context",
       "@mvcs/core": "../core",
