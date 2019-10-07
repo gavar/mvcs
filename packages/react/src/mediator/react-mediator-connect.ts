@@ -3,7 +3,7 @@ import { shallowDiffers } from "@emulsy/compare";
 import { Mediator, MediatorErrorHandlerObject } from "@mvcs/core";
 import { Logger, logging } from "@mvcs/logger";
 import { Component, ComponentType } from "react";
-import { scheduleUpdate, Toggling } from "../util";
+import { scheduleUpdate, Toggling } from "@mvcs/react-core";
 import { ModifiableView } from "../view";
 import { MediatorConnect } from "./mediator-connect";
 import { ReactViewMediator } from "./react-view-mediator";

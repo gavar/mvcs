@@ -4,7 +4,7 @@ import { ComponentClass, ComponentType, Context } from "react";
 import { Newable, RequiredKeys } from "tstt";
 import { BeanConnect } from "../bean";
 import { MediatorConnect, MediatorProvidePropsType } from "../mediator";
-import { componentName, EnhanceType } from "../util";
+import { componentNameOf, EnhanceType } from "@mvcs/react-core";
 import { ReactView } from "../view";
 import { argumentNotNull, asKeyPicker, KeyMap, keymapPicker, keysPicker } from "./connect-utils";
 import { ContextConnect } from "./context-connect";
@@ -310,7 +310,7 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
     const type: EnhanceType<P> = class extends ViewConnect<P> {};
     type.prototype.options = Object.seal(this);
     type.source = this.view.source || this.view;
-    type.displayName = `${componentName(type.source)}Connect`;
+    type.displayName = `${componentNameOf(type.source)}Connect`;
     if (this.view.contextType) type.contextType = this.view.contextType;
     return type as any;
   }

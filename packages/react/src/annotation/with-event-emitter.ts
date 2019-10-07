@@ -1,7 +1,7 @@
 import { ComponentClass, ComponentType } from "react";
 import { Partially } from "tstt";
 import { DispatchToProps, EmitterConnect } from "../connect";
-import { componentName, EnhanceType } from "../util";
+import { componentNameOf, EnhanceType } from "@mvcs/react-core";
 
 /**
  * Connect view to a application event dispatcher.
@@ -22,6 +22,6 @@ function annotate<P, K extends keyof P>(view: EnhanceType<P>, emitterToProps: Di
 
   const clazz = ViewConnect as EnhanceType;
   clazz.source = view.source || view;
-  clazz.displayName = `${componentName(clazz.source)}Events`;
+  clazz.displayName = `${componentNameOf(clazz.source)}Events`;
   return ViewConnect;
 }

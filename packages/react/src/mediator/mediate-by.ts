@@ -1,7 +1,7 @@
 import { Mediator } from "@mvcs/core";
 import { ComponentType } from "react";
 import { Newable } from "tstt";
-import { componentName } from "../util";
+import { componentNameOf } from "@mvcs/react-core";
 import { ReactView } from "../view";
 import { MediatorConnect } from "./mediator-connect";
 import { ReactMediatorConnect } from "./react-mediator-connect";
@@ -25,6 +25,6 @@ function annotate<P>(view: ComponentType<P>, mediators: Array<MediatorConnect<P>
   }
 
   const clazz = ViewMediator as ComponentType<P>;
-  clazz.displayName = `${componentName(view)}ViewMediator`;
+  clazz.displayName = `${componentNameOf(view)}ViewMediator`;
   return ViewMediator;
 }
