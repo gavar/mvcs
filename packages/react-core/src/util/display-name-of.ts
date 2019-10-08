@@ -1,10 +1,10 @@
 import { ComponentSpec, ElementType } from "react";
 
 /**
- * Resolve name of given component.
- * @param view - react component to resolve name of.
+ * Get display name of the given component.
+ * @param view - react component to resolve display name of.
  */
-export function componentNameOf(view: ElementType | ComponentSpec<any, any>): string {
+export function displayNameOf(view: ElementType | ComponentSpec<any, any>): string {
   // HTML element
   if (typeof view === "string")
     return view;
