@@ -1,7 +1,7 @@
 import { ComponentClass, ComponentType } from "react";
 import { Partially } from "tstt";
 import { DispatchToProps, EmitterConnect } from "../connect";
-import { displayNameOf, EnhanceType } from "@mvcs/react-core";
+import { displayNameOf, EnhanceType } from "@mvcs/react.core";
 
 /**
  * Connect view to a application event dispatcher.

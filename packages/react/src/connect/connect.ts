@@ -4,7 +4,7 @@ import { ComponentClass, ComponentType, Context } from "react";
 import { Newable, RequiredKeys } from "tstt";
 import { BeanConnect } from "../bean";
 import { MediatorConnect, MediatorProvidePropsType } from "../mediator";
-import { displayNameOf, EnhanceType } from "@mvcs/react-core";
+import { displayNameOf, EnhanceType } from "@mvcs/react.core";
 import { ReactView } from "../view";
 import { argumentNotNull, asKeyPicker, KeyMap, keymapPicker, keysPicker } from "./connect-utils";
 import { ContextConnect } from "./context-connect";

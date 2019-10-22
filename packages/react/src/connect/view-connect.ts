@@ -9,7 +9,7 @@ import { Component, ComponentType, Ref, RefObject } from "react";
 import { Mutable } from "tstt";
 import { BeanConnect, InjectorComponent } from "../bean";
 import { MediatorConnect, ReactViewMediator } from "../mediator";
-import { scheduleUpdate, Toggling } from "@mvcs/react-core";
+import { scheduleUpdate, Toggling } from "@mvcs/react.core";
 import { ModifiableView } from "../view";
 import { DispatchToProps } from "./emitter-connect";
 import { StoreConnect, StoreConnectOptions } from "./store-connect";

@@ -1,5 +1,5 @@
 {
-  "name": "@mvcs/react-core",
+  "name": "@mvcs/react.core",
   "version": "0.0.0",
   "description": "Common tools for React developer",
   "keywords": [
@@ -8,14 +8,14 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react-core#readme",
+  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react.core#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/react-core"
+    "url": "https://github.com/gavar/wrench/labels/react.core"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/gavar/mvcs.git",
-    "directory": "packages/react-core"
+    "directory": "packages/react.core"
   },
   "license": "ISC",
   "author": {
@@ -64,6 +64,6 @@
   "release": true,
   "standard-version": {
     "extends": "@wrench/standard-version-config",
-    "tag-prefix": "v/react-core/"
+    "tag-prefix": "v/react.core/"
   }
 }
