@@ -67,7 +67,7 @@
     "@types/node": "^12.7.1",
     "@types/semantic-release": "^15.13.0",
     "@wrench/commitlint-config": "<1.0.0",
-    "@wrench/copycat-package": ">=0.0.6 <1.0.0",
+    "@wrench/copycat-package": ">=0.0.8 <1.0.0",
     "@wrench/roll": ">=0.0.6 <1.0.0",
     "@wrench/semantic-release-ws-preset-nodejs": ">=0.0.8 <1.0.0",
     "@wrench/ts-config": ">=0.0.5 <1.0.0",
