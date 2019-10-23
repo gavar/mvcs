@@ -41,10 +41,10 @@
     "build": "yarn clean && yarn wsrun --bin npm -c pack",
     "clean": "rimraf out && yarn wsrun -c clean",
     "format:pack": "fixpack && sort-package-json && yarn wsrun -c format:pack",
-    "release": "semantic-release --no-ci",
+    "release": "yarn clean && semantic-release --no-ci",
     "sync:pack": "copycat-pack -r && typesync && yarn && yarn format:pack",
     "test": "jest",
-    "wsrun": "wsrun --stages -p @mvcs/*"
+    "wsrun": "wsrun --stages --fast-exit -p @mvcs/*"
   },
   "husky": {
     "hooks": {
