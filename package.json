@@ -88,9 +88,6 @@
     "@emulsy/compare": ">=0.0.1 <1.0.0",
     "@emulsy/lang": "<1.0.0"
   },
-  "release": {
-    "extends": "@wrench/semantic-release-ws-preset-nodejs/default"
-  },
   "ywl": {
     "pattern": [
       "@emulsy/*"
