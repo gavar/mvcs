@@ -9,8 +9,7 @@ import { Nil } from "tstt";
  */
 export function setStyleProp<K extends keyof CSSStyleDeclaration>(
   style: CSSStyleDeclaration, key: K,
-  value: CSSStyleDeclaration[K] | string | Nil,
-) {
-  if (value != null) style[name] = value;
-  else delete style[name];
+  value: CSSStyleDeclaration[K] | string | Nil) {
+  if (value == null) delete style[key];
+  else style[key] = value as any;
 }
