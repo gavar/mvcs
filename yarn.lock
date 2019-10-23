@@ -974,10 +974,10 @@
     execa "^1.0.0"
     fs-extra "^8.1.0"
 
-"@wrench/semantic-release-ws-preset-nodejs@>=0.0.8 <1.0.0":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@wrench/semantic-release-ws-preset-nodejs/-/semantic-release-ws-preset-nodejs-0.0.8.tgz#17766a4455e6b96dc0070c156ff0279774902afe"
-  integrity sha512-wk+6/V1eEdV4delrZQXTVDw5upfVKa9fpn+a3iLXQxCBjz8zm5oCk1jlUZUioHlXxZZzgpsR7MthFbvI8Tsg9w==
+"@wrench/semantic-release-ws-preset-nodejs@>=0.0.9 <1.0.0":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@wrench/semantic-release-ws-preset-nodejs/-/semantic-release-ws-preset-nodejs-0.0.9.tgz#4cf87b50afe28793574bc2675c8ab2e36929bc55"
+  integrity sha512-aH/sbGJ0qZaCfegCwE//IrSsuVU5BcboY6XzzGSJS2XAfLf0vUZO8ZwlDuJAgkKpT7jRjewj7r/fQax++46tGg==
   dependencies:
     "@semantic-release/commit-analyzer" "^7.0.0-beta.1"
     "@wrench/loaders" ">=0.0.8 <1.0.0"
@@ -986,6 +986,7 @@
     "@wrench/semantic-release-notes-generator" ">=0.0.4 <1.0.0"
     "@wrench/semantic-release-npm" ">=0.0.5 <1.0.0"
     "@wrench/semantic-release-ws" ">=0.0.9 <1.0.0"
+    semantic-release "16.0.0-beta.22"
 
 "@wrench/semantic-release-ws@>=0.0.9 <1.0.0":
   version "0.0.9"
@@ -6420,7 +6421,7 @@ sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@^16.0.0-beta:
+semantic-release@16.0.0-beta.22:
   version "16.0.0-beta.22"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-16.0.0-beta.22.tgz#d0b0b28da7c055a4f8665779b2b468b34d74b363"
   integrity sha512-E4RAIlXdPcqJPRms3UkzpdlBhN3Fa5RPoO13sFlMijlNqwAelmowtcc6Ik4IgJUJHQ+7G6ESKxfZ6y9qSs1nNw==
