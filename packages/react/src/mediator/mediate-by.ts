@@ -1,7 +1,7 @@
 import { Mediator } from "@mvcs/core";
+import { displayNameOf } from "@mvcs/react.core";
 import { ComponentType } from "react";
 import { Newable } from "tstt";
-import { displayNameOf } from "@mvcs/react.core";
 import { ReactView } from "../view";
 import { MediatorConnect } from "./mediator-connect";
 import { ReactMediatorConnect } from "./react-mediator-connect";

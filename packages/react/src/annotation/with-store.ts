@@ -1,9 +1,9 @@
 import { BeanType, beanTypeName } from "@mvcs/core";
+import { EnhanceType } from "@mvcs/react.core";
 import { Store } from "@mvcs/store";
 import { ComponentClass, ComponentType } from "react";
 import { Partially } from "tstt";
 import { StateSelector, StoreConnect, StoreConnectOptions } from "../connect";
-import { EnhanceType } from "@mvcs/react.core";
 
 /**
  * Connect view to store properties.

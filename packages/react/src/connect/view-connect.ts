@@ -4,16 +4,16 @@ import { beanDestroyer, BeanDestroyErrorHandler, Mediator, MediatorErrorHandlerO
 import { EventDef, EventEmitter } from "@mvcs/event";
 import { inject } from "@mvcs/injector";
 import { Logger, logging } from "@mvcs/logger";
+import { scheduleUpdate, Toggling } from "@mvcs/react.core";
 import { StoreListenerBinding } from "@mvcs/store";
 import { Component, ComponentType, Ref, RefObject } from "react";
 import { Mutable } from "tstt";
 import { BeanConnect, InjectorComponent } from "../bean";
 import { MediatorConnect, ReactViewMediator } from "../mediator";
-import { scheduleUpdate, Toggling } from "@mvcs/react.core";
 import { ModifiableView } from "../view";
+import { ContextConnect } from "./context-connect";
 import { DispatchToProps } from "./emitter-connect";
 import { StoreConnect, StoreConnectOptions } from "./store-connect";
-import { ContextConnect } from "./context-connect";
 
 type WithRef<P> = P & { ref?: Ref<any>; };
 
