@@ -16,9 +16,9 @@
     "transciever",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/base#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/base#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/base"
+    "url": "https://github.com/gavar/mvcs/labels/base"
   },
   "repository": {
     "type": "git",

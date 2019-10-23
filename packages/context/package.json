@@ -11,9 +11,9 @@
     "robotlegs",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/context#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/context#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/context"
+    "url": "https://github.com/gavar/mvcs/labels/context"
   },
   "repository": {
     "type": "git",

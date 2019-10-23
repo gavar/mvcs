@@ -12,9 +12,9 @@
     "robotlegs",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/event#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/event#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/event"
+    "url": "https://github.com/gavar/mvcs/labels/event"
   },
   "repository": {
     "type": "git",

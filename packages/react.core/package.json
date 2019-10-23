@@ -8,9 +8,9 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react.core#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/react.core#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/react.core"
+    "url": "https://github.com/gavar/mvcs/labels/react.core"
   },
   "repository": {
     "type": "git",

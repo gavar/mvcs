@@ -10,9 +10,9 @@
     "robotlegs",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/injector#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/injector#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/injector"
+    "url": "https://github.com/gavar/mvcs/labels/injector"
   },
   "repository": {
     "type": "git",

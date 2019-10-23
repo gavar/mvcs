@@ -10,9 +10,9 @@
     "robotlegs",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/core#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/core#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/core"
+    "url": "https://github.com/gavar/mvcs/labels/core"
   },
   "repository": {
     "type": "git",

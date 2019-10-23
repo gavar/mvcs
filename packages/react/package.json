@@ -13,9 +13,9 @@
     "store",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/react#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/react#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/react"
+    "url": "https://github.com/gavar/mvcs/labels/react"
   },
   "repository": {
     "type": "git",

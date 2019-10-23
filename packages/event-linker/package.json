@@ -11,9 +11,9 @@
     "robotlegs",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/event-linker#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/event-linker#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/event-linker"
+    "url": "https://github.com/gavar/mvcs/labels/event-linker"
   },
   "repository": {
     "type": "git",

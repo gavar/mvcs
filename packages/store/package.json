@@ -11,9 +11,9 @@
     "store",
     "typescript"
   ],
-  "homepage": "https://github.com/gavar/wrench/tree/master/packages/store#readme",
+  "homepage": "https://github.com/gavar/mvcs/tree/master/packages/store#readme",
   "bugs": {
-    "url": "https://github.com/gavar/wrench/labels/store"
+    "url": "https://github.com/gavar/mvcs/labels/store"
   },
   "repository": {
     "type": "git",
