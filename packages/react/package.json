@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MV* for React",
   "keywords": [
     "ioc",
@@ -48,14 +48,14 @@
   "dependencies": {
     "@emulsy/annotation": ">=0.0.2 <1.0.0",
     "@emulsy/compare": ">=0.0.1 <1.0.0",
-    "@mvcs/base": ">=0.0.1 <1.0.0",
-    "@mvcs/context": ">=0.0.1 <1.0.0",
-    "@mvcs/core": ">=0.0.2 <1.0.0",
-    "@mvcs/event": ">=0.0.2 <1.0.0",
-    "@mvcs/injector": ">=0.0.2 <1.0.0",
-    "@mvcs/logger": ">=0.0.1 <1.0.0",
-    "@mvcs/react.core": ">=0.0.1 <1.0.0",
-    "@mvcs/store": ">=0.0.1 <1.0.0"
+    "@mvcs/base": ">=0.0.2 <1.0.0",
+    "@mvcs/context": ">=0.0.2 <1.0.0",
+    "@mvcs/core": ">=0.0.3 <1.0.0",
+    "@mvcs/event": ">=0.0.3 <1.0.0",
+    "@mvcs/injector": ">=0.0.3 <1.0.0",
+    "@mvcs/logger": ">=0.0.2 <1.0.0",
+    "@mvcs/react.core": ">=0.0.2 <1.0.0",
+    "@mvcs/store": ">=0.0.2 <1.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.0",
