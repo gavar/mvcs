@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MV* common objects and interfaces required across the framework",
   "keywords": [
     "core",

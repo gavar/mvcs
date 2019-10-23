@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/event-linker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MV* event linker keeps track of listening events providing API to manage their lifecycle",
   "keywords": [
     "event-linker",
@@ -44,8 +44,8 @@
     "test": "jest --config ../../package.json --rootDir ."
   },
   "dependencies": {
-    "@mvcs/core": ">=0.0.1 <1.0.0",
-    "@mvcs/event": ">=0.0.1 <1.0.0"
+    "@mvcs/core": ">=0.0.2 <1.0.0",
+    "@mvcs/event": ">=0.0.2 <1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {

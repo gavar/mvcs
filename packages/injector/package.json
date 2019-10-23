@@ -1,6 +1,6 @@
 {
   "name": "@mvcs/injector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MV* inversion of control container inspired by RobotLegs SwiftSuspenders",
   "keywords": [
     "ioc",
@@ -45,7 +45,7 @@
   "dependencies": {
     "@emulsy/annotation": ">=0.0.2 <1.0.0",
     "@emulsy/lang": "<1.0.0",
-    "@mvcs/core": ">=0.0.1 <1.0.0"
+    "@mvcs/core": ">=0.0.2 <1.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {
