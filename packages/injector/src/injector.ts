@@ -51,17 +51,20 @@ export interface Injector {
   inject(target: any): void;
 }
 
-export namespace Injector {
-  const INJECTOR = Symbol("injector");
-
-  export declare const BeanType: Injector;
-  export const BeanName = "Injector";
+export declare namespace Injector {
+  export const BeanType: Injector;
 
   /**
    * Root injector to use as fallback.
    * Temporal solution until contexts are implemented.
    */
   export let root: Injector;
+}
+
+// TODO: remove namespace
+export namespace Injector {
+  const INJECTOR = Symbol("injector");
+  export const BeanName = "Injector";
 
   /*** Get injector used to initialize given object.  */
   export function getInjector(object: any): Injector {

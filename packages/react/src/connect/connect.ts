@@ -212,7 +212,9 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
   }
 
   /** @inheritDoc */
-  withContext<C, K extends keyof P>(contextType: Context<C>, contextToProps: (context: C, own: Readonly<P>) => Pick<P, K>) {
+  withContext<C, K extends keyof P>(
+    contextType: Context<C>,
+    contextToProps: (context: C, own: Readonly<P>) => Pick<P, K>) {
     argumentNotNull(contextType, "contextType");
     argumentNotNull(contextToProps, "contextToProps");
     this.byContext = this.byContext || [];
@@ -243,7 +245,9 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
   }
 
   /** @inheritDoc */
-  withStore<S, K extends keyof P>(storeType: BeanType<Store<S>>, stateToProps: (state: S, own: Readonly<P>) => Pick<P, K>) {
+  withStore<S, K extends keyof P>(
+    storeType: BeanType<Store<S>>,
+    stateToProps: (state: S, own: Readonly<P>) => Pick<P, K>) {
     argumentNotNull(storeType, "storeType");
     argumentNotNull(stateToProps, "stateToProps");
     const options = {storeType, stateToProps} as StoreConnectOptions;
@@ -282,7 +286,9 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
   }
 
   /** @inheritDoc */
-  withMediator<M extends Mediator<ReactView<Partial<P>>>, K extends keyof P>(mediatorType: Newable<M>, mediatorToProps?: (mediator: M) => Pick<P, K>) {
+  withMediator<M extends Mediator<ReactView<Partial<P>>>, K extends keyof P>(
+    mediatorType: Newable<M>,
+    mediatorToProps?: (mediator: M) => Pick<P, K>) {
     argumentNotNull(mediatorType, "mediatorType");
     this.byMediators = this.byMediators || [];
     this.byMediators.push({mediatorType, mediatorToProps});
@@ -290,12 +296,16 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
   }
 
   /** @inheritDoc */
-  withMediatorKeys<M extends Mediator<ReactView<Partial<P>>> & Pick<P, K>, K extends keyof P & keyof M>(mediatorType: Newable<M>, keys: K[]) {
+  withMediatorKeys<M extends Mediator<ReactView<Partial<P>>> & Pick<P, K>, K extends keyof P & keyof M>(
+    mediatorType: Newable<M>,
+    keys: K[]) {
     return this.withMediator(mediatorType, keysPicker(keys));
   }
 
   /** @inheritDoc */
-  withMediatorKeyMap<M extends Mediator<ReactView<Partial<P>>>, K extends keyof P>(mediatorType: Newable<M>, keymap: KeyMap<K, M>) {
+  withMediatorKeyMap<M extends Mediator<ReactView<Partial<P>>>, K extends keyof P>(
+    mediatorType: Newable<M>,
+    keymap: KeyMap<K, M>) {
     return this.withMediator(mediatorType, keymapPicker(keymap));
   }
 
@@ -307,11 +317,15 @@ class ConnectConfigurer<P, R extends keyof P> implements Connect<P, R>, ViewConn
 
   /** @inheritDoc */
   compose() {
-    const type: EnhanceType<P> = class extends ViewConnect<P> {};
+    class ConnectComponent extends ViewConnect<any> {}
+    return this.configure(ConnectComponent);
+  }
+
+  private configure<T extends ComponentClass<P> & EnhanceType<P>>(type: T): T {
     type.prototype.options = Object.seal(this);
     type.source = this.view.source || this.view;
     type.displayName = `${displayNameOf(type.source)}Connect`;
     if (this.view.contextType) type.contextType = this.view.contextType;
-    return type as any;
+    return type;
   }
 }

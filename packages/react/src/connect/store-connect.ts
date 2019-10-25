@@ -1,7 +1,7 @@
 import { BeanType } from "@mvcs/core";
 import { Injector } from "@mvcs/injector";
 import { Store, StoreListener, StoreListenerBinding } from "@mvcs/store";
-import React, { ComponentType } from "react";
+import { ComponentType, createElement } from "react";
 import { Partially } from "tstt";
 import { InjectorComponent } from "../bean";
 
@@ -41,9 +41,10 @@ export interface StoreInjector<S, P, K extends keyof P> {
  * @param own - component own props.
  * @param props - buffer to fill by selector.
  */
-function invoke<S, P, K extends keyof P>(selector: StateSelector<S, P, K>,
-                                         state: S, own: Readonly<P>,
-                                         props?: Partial<P>): Partially<P, K> {
+function invoke<S, P, K extends keyof P>(
+  selector: StateSelector<S, P, K>,
+  state: S, own: Readonly<P>,
+  props?: Partial<P>): Partially<P, K> {
   // picker returns object
   if (isPicker(selector))
     return props
@@ -113,7 +114,7 @@ export class StoreConnect<P, K extends keyof P, S> extends InjectorComponent<Par
     };
 
     // render
-    return React.createElement(this.view, props);
+    return createElement(this.view, props);
   }
 
   /** @inheritDoc */
@@ -139,8 +140,11 @@ export namespace StoreConnect {
    * @param items - list of configurations providing store type to listen for.
    * @return list of bindings for each store.
    */
-  export function on<P, S>(injector: Injector, listener: StoreListener<S>, target: object,
-                           items: ArrayLike<StoreConnectOptions<P, S>>): StoreListenerBinding<S>[] {
+  export function on<P, S>(
+    injector: Injector,
+    listener: StoreListener<S>,
+    target: object,
+    items: ArrayLike<StoreConnectOptions<P, S>>): StoreListenerBinding<S>[] {
     const size = items && items.length || 0;
     if (size <= 0) return;
 
@@ -162,9 +166,9 @@ export namespace StoreConnect {
    * @return {@link out} object with filled in props or a new object if {@param out} is null.
    */
   export function reduce<P, S>(own: P,
-                               bindings: ArrayLike<StoreListenerBinding<S>>,
-                               items: ArrayLike<StoreConnectOptions<P, S>>,
-                               out?: Partial<P>): Partial<P> {
+    bindings: ArrayLike<StoreListenerBinding<S>>,
+    items: ArrayLike<StoreConnectOptions<P, S>>,
+    out?: Partial<P>): Partial<P> {
     const size = bindings && bindings.length || 0;
     for (let i = 0; i < size; i++) {
       const {state} = bindings[i].store;
