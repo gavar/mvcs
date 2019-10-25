@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/gavar/mvcs/compare/v/react/0.0.4...v/react/0.0.5) (2019-10-25)
+
+
+### Features
+
+* use injector to initialize mediator in same context as connected view ([ef26b35](https://github.com/gavar/mvcs/commit/ef26b35))
+
 ## [0.0.4](https://github.com/gavar/mvcs/compare/v/react/0.0.3...v/react/0.0.4) (2019-10-25)
 
 
