@@ -44,7 +44,7 @@
     "release": "yarn clean && semantic-release --no-ci",
     "sync:pack": "copycat-pack -r && typesync && yarn && yarn format:pack",
     "test": "jest",
-    "wsrun": "wsrun --stages --fast-exit -p @mvcs/*"
+    "wsrun": "wsrun --stages --fast-exit --report -p @mvcs/*"
   },
   "husky": {
     "hooks": {
