@@ -85,7 +85,11 @@
       "@mvcs/react.core": "../react.core",
       "@mvcs/store": "../store"
     },
+    "devDependencies": {
+      "react": "../.."
+    },
     "peerDependencies": {
+      "react": "../..",
       "tslib": "../.."
     }
   },

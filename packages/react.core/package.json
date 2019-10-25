@@ -46,6 +46,7 @@
     "react": "^16.0.0"
   },
   "peerDependencies": {
+    "react": "^16.0.0",
     "tslib": "^1.10.0"
   },
   "publishConfig": {
@@ -57,7 +58,11 @@
     "repository": "../..",
     "publishConfig": "../..",
     "dependencies": {},
+    "devDependencies": {
+      "react": "../.."
+    },
     "peerDependencies": {
+      "react": "../..",
       "tslib": "../.."
     }
   },
