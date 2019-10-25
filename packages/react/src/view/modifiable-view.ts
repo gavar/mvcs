@@ -14,8 +14,9 @@ export namespace ModifiableView {
 /**
  * Default implementation of the {@link ReactModifiableView}.
  */
-export class ModifiableView<P = any, C = any> extends DefaultView<P, C> implements ReactModifiableView<P, C>, DisposableBean {
-
+export class ModifiableView<P = any, C = any> extends DefaultView<P, C> implements //
+  ReactModifiableView<P, C>,
+  DisposableBean {
   /** State accumulated by {@link #commit} calls.  */
   readonly state: Partial<P> = {};
 

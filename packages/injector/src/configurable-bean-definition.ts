@@ -6,7 +6,10 @@ import { BindingScopeSyntax, BindingToSyntax } from "./binding-syntax";
 /**
  * Bean definition with fluent confirmation syntax.
  */
-export class ConfigurableBeanDefinition<T = any> implements BeanDefinition<T>, BindingToSyntax<T>, BindingScopeSyntax<T> {
+export class ConfigurableBeanDefinition<T = any> implements //
+  BeanDefinition<T>,
+  BindingToSyntax<T>,
+  BindingScopeSyntax<T> {
 
   /** @inheritDoc */
   readonly beanType: BeanType<T>;

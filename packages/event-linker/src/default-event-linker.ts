@@ -28,7 +28,11 @@ export class DefaultEventLinker implements EventLinker {
   }
 
   /** @inheritDoc */
-  addListener<T extends any[]>(container: EventContainer, name: EventDef<T>, listener: EventListener<T>, target?: any): void {
+  addListener<T extends any[]>(
+    container: EventContainer,
+    name: EventDef<T>,
+    listener: EventListener<T>,
+    target?: any): void {
     container.addEventListener(name, listener, target);
     const link = {type: eventTypeOf(name)} as EventLink<T>;
     link.listener = listener;

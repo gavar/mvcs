@@ -41,9 +41,10 @@ function isPicker<P, K extends keyof P>(selector: DispatchToProps<P, K>): select
  * @param props - optional buffer to fill by selector.
  * @return {@link out} object with filled in props or a new object if {@link out} is null.
  */
-function invoke<P, K extends keyof P>(selector: DispatchToProps<P, K>,
-                                      dispatch: Dispatch, view: ReactView<P>,
-                                      props?: Partial<P>): Partially<P, K> {
+function invoke<P, K extends keyof P>(
+  selector: DispatchToProps<P, K>,
+  dispatch: Dispatch, view: ReactView<P>,
+  props?: Partial<P>): Partially<P, K> {
   // picker returns object
   if (isPicker(selector))
     return props
@@ -63,10 +64,11 @@ function invoke<P, K extends keyof P>(selector: DispatchToProps<P, K>,
  * @param selectors - selectors binding events to component callbacks.
  * @param props - props object to fill by given selectors.
  */
-function reduce<P>(dispatch: Dispatch,
-                   ref: ReactView<P>,
-                   selectors: ArrayLike<DispatchToProps<P, any>>,
-                   props?: Partial<P>): Partial<P> {
+function reduce<P>(
+  dispatch: Dispatch,
+  ref: ReactView<P>,
+  selectors: ArrayLike<DispatchToProps<P, any>>,
+  props?: Partial<P>): Partial<P> {
   const size = selectors && selectors.length || 0;
   for (let i = 0; i < size; i++)
     props = invoke(selectors[i], dispatch, ref, props);
@@ -102,7 +104,11 @@ export class EmitterConnect<P, R extends keyof P = RequiredKeys<P>> extends Inje
   protected readonly dispatchProps: Partially<P, R>;
   protected readonly componentType: ComponentType<P>;
 
-  constructor(props: Partially<P, R>, context: any, componentType: ComponentType<P>, dispatchToProps: DispatchToProps<P, R>) {
+  constructor(
+    props: Partially<P, R>,
+    context: any,
+    componentType: ComponentType<P>,
+    dispatchToProps: DispatchToProps<P, R>) {
     super(props, context);
     this.componentType = componentType;
     this.view = new DefaultView();

@@ -24,7 +24,11 @@ export interface EventLinker {
    *
    * @see EventContainer#addEventListener
    */
-  addListener<T extends any[]>(container: EventContainer, name: EventDef<T>, listener: EventListener<T>, target?: any): void;
+  addListener<T extends any[]>(
+    container: EventContainer,
+    name: EventDef<T>,
+    listener: EventListener<T>,
+    target?: any): void;
 
   /***
    * Removes listener from the given container.

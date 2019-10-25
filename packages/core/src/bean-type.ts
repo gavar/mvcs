@@ -34,7 +34,7 @@ export type BeanType<T = any> =
   | Abstract<T> //        abstract class itself (function) uniquely identify bean
   | VirtualBeanType<T> // object reference declaring type properties uniquely identify bean
   | symbol //             symbol uniquely identify bean
-  | string //             name of the bean, does not provide unique identity, since it may collide with other names, use at own risk
+  | string //             name of the bean, does not provide unique identity, since it may collide with other names
   ;
 
 export function beanTypeName<T>(type: BeanType<T>): string | undefined {

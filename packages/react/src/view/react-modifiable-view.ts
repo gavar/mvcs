@@ -16,7 +16,7 @@ export interface ReactModifiableView<P = unknown, C = unknown> extends ReactView
   /**
    * Commit mutation to the rendering properties.
    * IMPORTANT:
-   * - properties provided to a mutation function are only set of accumulated changes but not the actual rendering properties.
+   * - properties provided to a function are only set of accumulated changes but not the actual rendering properties.
    * - make sure you're not using those for evaluating current rendering props.
    *
    * @param mutation - mutation aggregating props to inject over the component provided props.

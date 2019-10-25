@@ -6,8 +6,9 @@ import { EventDef } from "./event-name";
  */
 export interface EventContainer {
   /**
-   * Adds the {@param listener} function to the end of the listeners array for for the event identified by {@param name}.
-   * Multiple calls with same combination of {@param name} and {@param listener} will result in the listener being added multiple times.
+   * Adds the {@param listener} function to the end of the listeners array for for the event identified by
+   * {@param name}. Multiple calls with same combination of {@param name} and {@param listener} will result in the
+   * listener being added multiple times.
    * @param name - identifies the event to invoke listeners for.
    * @param listener - listener function to call whenever event occurs.
    * @param target - target to invoke listener on.

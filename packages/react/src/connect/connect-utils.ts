@@ -85,7 +85,8 @@ export function pick<T, K extends keyof T>(source: Pick<T, K>, keys: K[]): Pick<
 }
 
 /**
- * From source object pick properties such way, that output object will contain property value by the 2nd entry of the corresponding pair.
+ * From source object pick properties such way, that output object will contain property value
+ * by the 2nd entry of the corresponding pair.
  * @param source - source object to pick properties from.
  * @param pairs - pairs defining source and target property names respectively.
  */

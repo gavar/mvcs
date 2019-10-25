@@ -40,7 +40,9 @@ export abstract class AbstractStore<S = object> implements Store<S> {
   }
 
   /** @inheritDoc */
-  commitKey<K extends keyof S, T extends any[]>(key: K, mutation: (value: S[K], ...args: T) => any | false, ...args: T): void | Promise<void> {
+  commitKey<K extends keyof S, T extends any[]>(key: K,
+    mutation: (value: S[K], ...args: T) => any | false,
+    ...args: T): void | Promise<void> {
     return this.commit(mutateKey, key, mutation, args);
   }
 
@@ -83,7 +85,6 @@ export abstract class AbstractStore<S = object> implements Store<S> {
         // notify subscribers
         const {listener, target} = binding;
         const promise = listener.call(target, state);
-
         // accumulate promises
         if (promise && promise.then)
           switch (size++) {
@@ -101,7 +102,6 @@ export abstract class AbstractStore<S = object> implements Store<S> {
         console.error(e);
       }
     }
-
     // do not create promise until required
     if (size < 1) return RESOLVE;
     if (size < 2) return promises;
@@ -124,13 +124,16 @@ export function setKey<S, K extends keyof S>(state: S, key: K, value: S[K]): boo
   return false;
 }
 
-function mutateKey<S, K extends keyof S, T extends any[]>(state: S, key: K,
-                                                          mutation: (value: S[K], ...args: T) => any | false,
-                                                          args: T): any | false {
+function mutateKey<S, K extends keyof S, T extends any[]>(
+  state: S, key: K,
+  mutation: (value: S[K], ...args: T) => any | false,
+  args: T): any | false {
   return mutation(state[key], ...args);
 }
 
-function mutateByPatch<S, T extends any[]>(state: S, patch: Partial<S> | StatePatcher<S, T>, ...args: T): any | false {
+function mutateByPatch<S, T extends any[]>(
+  state: S,
+  patch: Partial<S> | StatePatcher<S, T>, ...args: T): any | false {
   if (typeof patch === "function")
     patch = patch(state, ...args);
 

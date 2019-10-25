@@ -16,7 +16,9 @@ export interface EventBinder {
 /**
  * Represents API for fine tune event configuration.
  */
-export interface EventBindingConfigurer<T extends any[] = any> extends EventBindingBySyntax<T>, EventBindingTimesSyntax<T> {
+export interface EventBindingConfigurer<T extends any[] = any> extends //
+  EventBindingBySyntax<T>,
+  EventBindingTimesSyntax<T> {
 
 }
 

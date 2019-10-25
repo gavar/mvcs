@@ -31,7 +31,11 @@ export namespace ContextConnect {
    * @param items - array of context connectors.
    * @param out - buffer to fill with property values.
    */
-  export function reduce<P>(own: Readonly<P>, legacyContext: any, items: Array<ContextConnect<P>>, out?: Partial<P>): Partial<P> {
+  export function reduce<P>(
+    own: Readonly<P>,
+    legacyContext: any,
+    items: Array<ContextConnect<P>>,
+    out?: Partial<P>): Partial<P> {
     for (const item of items) {
       const context = item.contextType ? useContext(item.contextType) : legacyContext;
       const props = item.contextToProps(context, own);

@@ -73,12 +73,18 @@ export abstract class Transceiver implements DisposableBean, BeanDestroyErrorHan
   }
 
   /** Adds event listener to the application context via {@link eventDispatcher}. */
-  protected addContextListener<T extends any[]>(name: EventDef<T>, listener: EventListener<T>, target: any = this): void {
+  protected addContextListener<T extends any[]>(
+    name: EventDef<T>,
+    listener: EventListener<T>,
+    target: any = this): void {
     this.eventLinker.addListener(this.eventDispatcher, name, listener, target);
   }
 
   /** Remove event listener from the application context via {@link eventDispatcher}. */
-  protected removeContextListener(name: EventDef, listener: EventListener, target: any = this): void {
+  protected removeContextListener(
+    name: EventDef,
+    listener: EventListener,
+    target: any = this): void {
     this.eventLinker.removeListener(this.eventDispatcher, name, listener, target);
   }
 

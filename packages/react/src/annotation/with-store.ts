@@ -10,7 +10,9 @@ import { StateSelector, StoreConnect, StoreConnectOptions } from "../connect";
  * @param storeType - type of the store to use.
  * @param stateToProps - function that extracts view properties from a store state.
  */
-export function withStore<S, P, K extends keyof P>(storeType: BeanType<Store<S>>, stateToProps: StateSelector<S, P, K>) {
+export function withStore<S, P, K extends keyof P>(
+  storeType: BeanType<Store<S>>,
+  stateToProps: StateSelector<S, P, K>) {
   return function (view: ComponentType<P>): ComponentClass<Partially<P, K>> {
     return annotate(view, {storeType, stateToProps}) as any;
   };

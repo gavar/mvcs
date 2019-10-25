@@ -52,8 +52,7 @@ export interface Store<S = object> {
    * @param mutation - {@link StateMutation state mutation function}.
    * @param args - additional arguments to pass into mutation function.
    */
-  commitKey<K extends keyof S, T extends any[]>(
-    key: K,
+  commitKey<K extends keyof S, T extends any[]>(key: K,
     mutation: (value: S[K], ...args: T) => any | false,
     ...args: T
   ): void | Promise<void>;
