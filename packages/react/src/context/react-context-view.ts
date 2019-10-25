@@ -1,21 +1,33 @@
-import { Context } from "@mvcs/context";
+import { Context, DefaultContext } from "@mvcs/context";
 import { Component, createElement } from "react";
+import { Newable } from "tstt";
 import { ReactContext } from "./react-context";
 
-export namespace ReactContextView {
-  export interface Props {
-    contextType: new () => Context;
-    configure?(context: Context): void;
+export declare namespace ReactContextView {
+  export interface Props<T extends Context = Context> {
+    /** Type of the context to create on component mount. */
+    contextType?: Newable<T>;
+
+    /**
+     * Function configuring context for the application needs.
+     * @param context - context created by {@link }
+     */
+    configure?(context: T): void;
   }
 }
 
 /**
  * React component initializing `mvcs` context.
  */
-export class ReactContextView extends Component<ReactContextView.Props> {
-  protected mvcs: Context;
+export class ReactContextView<T extends Context = Context> extends Component<ReactContextView.Props<T>> {
 
-  constructor(props: ReactContextView.Props, context: any) {
+  static defaultProps: Partial<ReactContextView.Props> = {
+    contextType: DefaultContext,
+  };
+
+  protected mvcs: T;
+
+  constructor(props: ReactContextView.Props<T>, context: any) {
     super(props, context);
     const {contextType, configure} = props;
 
@@ -38,7 +50,8 @@ export class ReactContextView extends Component<ReactContextView.Props> {
 
   /** @inheritDoc */
   render() {
-    return createElement(ReactContext.Provider,
+    return createElement(
+      ReactContext.Provider,
       {value: this.mvcs},
       this.props.children,
     );

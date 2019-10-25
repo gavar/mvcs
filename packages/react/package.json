@@ -59,7 +59,8 @@
   },
   "devDependencies": {
     "@types/react": "^16.0.0",
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "tstt": "^1.0.4"
   },
   "peerDependencies": {
     "react": "^16.0.0",
@@ -86,7 +87,8 @@
       "@mvcs/store": "../store"
     },
     "devDependencies": {
-      "react": "../.."
+      "react": "../..",
+      "tstt": "../.."
     },
     "peerDependencies": {
       "react": "../..",
