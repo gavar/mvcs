@@ -4,7 +4,7 @@ import { beanDestroyer, BeanDestroyErrorHandler, Mediator, MediatorErrorHandlerO
 import { EventDef, EventEmitter } from "@mvcs/event";
 import { inject } from "@mvcs/injector";
 import { Logger, logging } from "@mvcs/logger";
-import { scheduleUpdate, Toggling } from "@mvcs/react.core";
+import { isRefComplaint, scheduleUpdate, Toggling } from "@mvcs/react.core";
 import { StoreListenerBinding } from "@mvcs/store";
 import { Component, ComponentType, Ref, RefObject } from "react";
 import { Mutable } from "tstt";
@@ -215,7 +215,8 @@ export class ViewConnect<P = unknown> extends InjectorComponent<WithRef<P>, Togg
       );
 
       // overrides
-      finalProps.ref = this.setRef;
+      if (isRefComplaint(this.options.view))
+        finalProps.ref = this.setRef;
 
       // reset flags
       this.viewPropsDirty = false;
