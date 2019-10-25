@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/gavar/mvcs/compare/v/react/0.0.3...v/react/0.0.4) (2019-10-25)
+
+
+### Features
+
+* default context type for ReactContextView ([184e16d](https://github.com/gavar/mvcs/commit/184e16d))
+
 ## [0.0.3](https://github.com/gavar/mvcs/compare/v/react/0.0.2...v/react/0.0.3) (2019-10-25)
 
 
