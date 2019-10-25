@@ -62,9 +62,10 @@ export class ViewConnect<P = unknown> extends InjectorComponent<WithRef<P>, Togg
 
   constructor(props: P, context: any, options?: ViewConnectOptions<P>) {
     super(props, context);
+
     // initialize
     this.ownPropsDirty = true;
-    this.options = options || this.options;
+    this.options = options || Object.getPrototypeOf(this).options;
     this.view = new ModifiableView({
       commit: this.onViewCommit,
     });
@@ -203,7 +204,8 @@ export class ViewConnect<P = unknown> extends InjectorComponent<WithRef<P>, Togg
     // should merge?
     if (dirty) {
       // merge props
-      finalProps = Object.assign({},
+      finalProps = Object.assign(
+        {},
         this.options.props,
         this.contextProps,
         this.beanProps,
