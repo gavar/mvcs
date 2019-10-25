@@ -1,3 +1,11 @@
+## [0.0.4](https://github.com/gavar/mvcs/compare/v/injector/0.0.3...v/injector/0.0.4) (2019-10-25)
+
+
+### Bug Fixes
+
+* inject compatibility with babel ([8eaf099](https://github.com/gavar/mvcs/commit/8eaf099))
+* minor tweaks ([7372e58](https://github.com/gavar/mvcs/commit/7372e58))
+
 ## [0.0.3](https://github.com/gavar/mvcs/compare/v/injector/0.0.2...v/injector/0.0.3) (2019-10-23)
 
 
