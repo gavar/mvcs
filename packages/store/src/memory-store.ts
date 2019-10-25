@@ -6,7 +6,12 @@ import { AbstractStore } from "./abstract-store";
 export class MemoryStore<S = object> extends AbstractStore<S> {
 
   /** @inheritDoc */
-  state: Readonly<S> = {} as S;
+  state: Readonly<S> = this.getInitialState();
+
+  /** Get initial value of the {@link state}. */
+  getInitialState(): S {
+    return {} as S;
+  }
 
   /** @inheritDoc */
   commit<T extends any[]>(mutation: (state: S, ...args: T) => any | false, ...args: T): void | Promise<void> {
@@ -20,9 +25,7 @@ export class MemoryStore<S = object> extends AbstractStore<S> {
    * Post process state before applying.
    * @param state - state to process.
    */
-  beforeApply?(state: S): S | void;
+  beforeApply(state: S): S | void {
+    // stub function
+  }
 }
-
-MemoryStore.prototype.beforeApply = function () {
-  // stub function
-};
