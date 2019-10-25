@@ -3,7 +3,8 @@ import { shallowDiffers } from "@emulsy/compare";
 import { Mediator, MediatorErrorHandlerObject } from "@mvcs/core";
 import { Logger, logging } from "@mvcs/logger";
 import { scheduleUpdate, Toggling } from "@mvcs/react.core";
-import { Component, ComponentType } from "react";
+import { ComponentType } from "react";
+import { InjectorComponent } from "../bean";
 import { ModifiableView } from "../view";
 import { MediatorConnect } from "./mediator-connect";
 import { ReactViewMediator } from "./react-view-mediator";
@@ -12,7 +13,8 @@ import { ReactViewMediator } from "./react-view-mediator";
  * High-order component connecting mediators to a react component.
  */
 @logging
-export class ReactMediatorConnect<P = any> extends Component<P, Toggling> implements MediatorErrorHandlerObject {
+export class ReactMediatorConnect<P = any> extends InjectorComponent<P, Toggling>
+  implements MediatorErrorHandlerObject {
 
   private finalProps: P;
   private readonly logger: Logger;
@@ -40,7 +42,12 @@ export class ReactMediatorConnect<P = any> extends Component<P, Toggling> implem
 
     if (mediators && mediators.length) {
       this.mediatorProps = {};
-      this.mediators = MediatorConnect.create(mediators, this.view, this.mediatorProps, this);
+      this.mediators = MediatorConnect.create(
+        mediators,
+        this.view,
+        this.mediatorProps,
+        this.injector,
+        this);
     }
   }
 

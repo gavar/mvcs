@@ -1,4 +1,5 @@
 import { Mediator, MediatorErrorHandlerObject } from "@mvcs/core";
+import { Injector } from "@mvcs/injector";
 import { Newable } from "tstt";
 import { ReactView } from "../view";
 import { ReactViewMediator } from "./react-view-mediator";
@@ -23,15 +24,18 @@ export namespace MediatorConnect {
    * @param array - array of mediators to initialize.
    * @param view - view to set for every mediator in a list.
    * @param props - props to fill with result of {@link MediatorConnect#mediatorToProps}.
+   * @param injector - injector to use for instantiating mediators.
    * @param errorHandler - object to use for error handling.
    */
-  export function create<P>(array: Array<MediatorConnect<P>>,
-                            view: ReactView<P>, props: Partial<P>,
-                            errorHandler?: MediatorErrorHandlerObject) {
+  export function create<P>(
+    array: Array<MediatorConnect<P>>,
+    view: ReactView<P>, props: Partial<P>,
+    injector: Injector,
+    errorHandler?: MediatorErrorHandlerObject) {
     const mediators = new Array(array.length) as Array<ReactViewMediator<P>>;
     for (let i = 0; i < array.length; i++) {
       const {mediatorType, mediatorToProps} = array[i];
-      const mediator = mediators[i] = Mediator.create(mediatorType, view, errorHandler);
+      const mediator = mediators[i] = Mediator.initialize(injector.instantiate(mediatorType), view, errorHandler);
       if (mediatorToProps) Object.assign(props, mediatorToProps(mediator));
       else if (mediator.getInitialProps) Object.assign(props, mediator.getInitialProps());
     }

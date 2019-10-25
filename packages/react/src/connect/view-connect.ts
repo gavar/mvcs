@@ -91,7 +91,12 @@ export class ViewConnect<P = unknown> extends InjectorComponent<WithRef<P>, Togg
     // TODO: do we need to track props changes to recalculate beanProps?
     if (this.options.byMediators) {
       this.mediatorProps = {};
-      this.mediators = MediatorConnect.create(this.options.byMediators, this.view, this.mediatorProps, this);
+      this.mediators = MediatorConnect.create(
+        this.options.byMediators,
+        this.view,
+        this.mediatorProps,
+        this.injector,
+        this);
     }
 
     // initial props

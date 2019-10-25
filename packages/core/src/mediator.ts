@@ -1,5 +1,3 @@
-import { Newable } from "tstt";
-
 /**
  * Listens for view events and reacts in them.
  */
@@ -31,20 +29,20 @@ export interface Mediator<V = any> {
 
 export namespace Mediator {
   /**
-   * Create new instance of the mediator and assign self as view.
-   * Specially designed for {@link Array.map}, where view is the last argument.
+   * Initialize new instance of the mediator.
    * @see MediatorLifecycle.preInitialize
    * @see MediatorLifecycle.setView
    * @see MediatorLifecycle.initialize
    * @see MediatorLifecycle.postInitialize
    */
-  export function create<M extends Mediator<V>, V>(type: Newable<M>, view: V, errorHandler?: MediatorErrorHandlerObject): M {
-    const mediator: MediatorLifecycle<V> = new type();
+  export function initialize<M extends MediatorLifecycle<V>, V>(
+    mediator: M, view: V,
+    errorHandler?: MediatorErrorHandlerObject): M {
     hook(mediator, "preInitialize", errorHandler);
     hook(mediator, "setView", errorHandler, view);
     hook(mediator, "initialize", errorHandler);
     hook(mediator, "postInitialize", errorHandler);
-    return mediator as M;
+    return mediator;
   }
 
   /**
@@ -63,18 +61,18 @@ export namespace Mediator {
    * @param mediator - mediator that may optionally implement a hook.
    * @param key - name of the hook to invoke.
    * @param errorHandler - handler to use for catching errors.
-   * @param args - arguments to pass in a hook if any.
+   * @param params - arguments to pass in a hook if any.
    */
   export function hook<//
     M extends Mediator & Partial<Record<K, F>>,
     K extends keyof M,
-    F extends (...args: any) => any>(
+    F extends (...params: P) => any,
+    P extends any[]>(
     mediator: M, key: K,
     errorHandler: MediatorErrorHandlerObject = defaultErrorHandler,
-    ...args: Parameters<M[K]>) {
-
+    ...params: P) {
     if (mediator[key])
-      try { mediator[key].apply(mediator, args); } //
+      try { mediator[key].apply(mediator, params); } //
       catch (e) { errorHandler.catchMediatorHookError(e, key, mediator); }
   }
 
