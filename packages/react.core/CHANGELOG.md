@@ -1,3 +1,11 @@
+## [0.0.4](https://github.com/gavar/mvcs/compare/v/react.core/0.0.3...v/react.core/0.0.4) (2019-10-30)
+
+
+### Features
+
+* react types ([7c5e9c9](https://github.com/gavar/mvcs/commit/7c5e9c9))
+* unfreeze props ([c8086a9](https://github.com/gavar/mvcs/commit/c8086a9))
+
 ## [0.0.3](https://github.com/gavar/mvcs/compare/v/react.core/0.0.2...v/react.core/0.0.3) (2019-10-25)
 
 
