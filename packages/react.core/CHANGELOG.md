@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/gavar/mvcs/compare/v/react.core/0.0.4...v/react.core/0.0.5) (2019-10-31)
+
+
+### Features
+
+* making `react.core` friendly to use as symlink ([987e0db](https://github.com/gavar/mvcs/commit/987e0db))
+
 ## [0.0.4](https://github.com/gavar/mvcs/compare/v/react.core/0.0.3...v/react.core/0.0.4) (2019-10-30)
 
 
